@@ -1,21 +1,18 @@
-import java.util.Scanner;
-class subseq
+import java.util.*;
+
+class Subsequence
 {
-     static Scanner sc=new Scanner(System.in);
-     static void seq(String str,String str2)
-	 {
-     if(str2.length()<0)
-     return;
-
-     System.out.println(str);
-     for(int i=0;i<str2.length();i++)
-     seq(str+str2.charAt(i),str2.substring(i+1,str2.length()));
-     }
-
-
-     public static void main (String args[])
-	 {
-		String st=sc.nextLine();
-		seq("",st);
-	 }
+    public static void SubString(String str, int n)
+    {
+       for (int i = 0; i < n; i++) 
+           for (int j = i+1; j <= n; j++)
+             System.out.println(str.substring(i, j));
+    }
+ 
+    public static void main(String[] args)
+    {
+		Scanner s=new Scanner(System.in);
+        String str = s.nextLine();
+        SubString(str, str.length());
+    }
 }
